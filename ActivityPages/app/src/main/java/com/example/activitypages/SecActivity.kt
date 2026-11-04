@@ -1,0 +1,45 @@
+package com.example.activitypages
+
+import android.app.Activity
+import android.content.Intent
+import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+
+class SecActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_sec)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
+
+        val tvReceived = findViewById<TextView>(R.id.tvReceived)
+        val etReply = findViewById<EditText>(R.id.etReply)
+        val btnReturn = findViewById<Button>(R.id.btnReturn)
+
+        // 接收第一頁傳來的 Intent 資料
+        val receivedText = intent.getStringExtra("input_key")
+        if (!receivedText.isNullOrEmpty()) {
+            tvReceived.text = receivedText
+        }
+
+        // 使用 setResult() 儲存回傳資料，並呼叫 finish() 返回 MainActivity
+        btnReturn.setOnClickListener {
+            val replyText = etReply.text.toString()
+            val resultIntent = Intent().apply {
+                putExtra("reply_key", replyText)
+            }
+            setResult(RESULT_OK, resultIntent)
+            finish()
+        }
+    }
+}
