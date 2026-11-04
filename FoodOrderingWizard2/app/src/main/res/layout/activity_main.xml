@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FastFood Order Wizard"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btnChooseMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Choose Main Meal" />
+
+    <Button
+        android:id="@+id/btnChooseSide"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose Side Dishes" />
+
+    <Button
+        android:id="@+id/btnChooseDrink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Choose Drink" />
+
+    <TextView
+        android:id="@+id/tvCurrentSelection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Current Selection:\nMain: -\nSamples: -\nDrink: -"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btnOrder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Order" />
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp" />
+</LinearLayout>
