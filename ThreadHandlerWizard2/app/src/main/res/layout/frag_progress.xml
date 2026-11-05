@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- 狀態文字 (Preparing... / 工作中 / 背景工作結束!) -->
+    <TextView
+        android:id="@+id/txtStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- 圓形進度條與中央文字區塊 -->
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="200dp">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:indeterminate="true"
+            android:progressDrawable="@drawable/circle_progress_background" />
+
+        <TextView
+            android:id="@+id/txtPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</LinearLayout>
